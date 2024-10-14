@@ -6,13 +6,13 @@
 /*   By: root <root@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/14 14:05:20 by root              #+#    #+#             */
-/*   Updated: 2024/10/14 14:08:25 by root             ###   ########.fr       */
+/*   Updated: 2024/10/14 14:14:50 by root             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t strlen(const char *s)
+size_t	strlen(const char *s)
 {
 	size_t	i;
 
