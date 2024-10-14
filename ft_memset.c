@@ -6,7 +6,7 @@
 /*   By: root <root@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/14 14:18:41 by root              #+#    #+#             */
-/*   Updated: 2024/10/14 14:25:01 by root             ###   ########.fr       */
+/*   Updated: 2024/10/14 14:44:15 by root             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,14 @@
 
 void	*ft_memset(void *s, int c, size_t n)
 {
+	unsigned char *str;
 	size_t	i;
 
 	i = 0;
+	str = (unsigned char *)s;
 	while (i <= n)
 	{
-		s[i] = c;
+		str[i] = (unsigned char)c;
 		i++;
 	}
 	return (s);
