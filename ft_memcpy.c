@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: root <root@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: jcologne <jcologne@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/14 16:23:14 by root              #+#    #+#             */
-/*   Updated: 2024/10/14 16:33:59 by root             ###   ########.fr       */
+/*   Created: 2024/10/14 16:39:08 by jcologne          #+#    #+#             */
+/*   Updated: 2024/10/14 16:39:34 by jcologne         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 		*tmp_dest = *tmp_src;
 		tmp_dest++;
 		tmp_src++;
+		n--;
 	}
 	return (dest);
 }
