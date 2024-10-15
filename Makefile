@@ -10,4 +10,3 @@ all: $(NAME)
 teste:
 	@$(CC) main.c $(SRC)
 	@./a.out
-	@rm a.out
