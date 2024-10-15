@@ -6,9 +6,11 @@
 /*   By: jcologne <jcologne@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/10 12:14:24 by wsl               #+#    #+#             */
-/*   Updated: 2024/10/14 23:37:53 by jcologne         ###   ########.fr       */
+/*   Updated: 2024/10/14 23:45:36 by jcologne         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 int	ft_isprint(int c)
 {

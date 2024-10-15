@@ -3,15 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: wsl <wsl@student.42.fr>                    +#+  +:+       +#+        */
+/*   By: jcologne <jcologne@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/10 11:10:25 by wsl               #+#    #+#             */
-/*   Updated: 2024/10/10 18:19:21 by wsl              ###   ########.fr       */
+/*   Updated: 2024/10/14 23:46:20 by jcologne         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char *ft_strchr(const char *str, int c);
-
+#include "libft.h"
 #include <stdio.h>
 int main(void)
 {

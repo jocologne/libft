@@ -6,10 +6,11 @@
 /*   By: jcologne <jcologne@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/14 23:39:05 by jcologne          #+#    #+#             */
-/*   Updated: 2024/10/14 23:39:14 by jcologne         ###   ########.fr       */
+/*   Updated: 2024/10/14 23:45:46 by jcologne         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
 //PRECISA DE CORREÇÃO
 int	ft_strlen(const char *str);
 
