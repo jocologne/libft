@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jcologne <jcologne@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: jcologne <jcologne@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/10 15:59:25 by wsl               #+#    #+#             */
-/*   Updated: 2024/10/14 23:37:20 by jcologne         ###   ########.fr       */
+/*   Updated: 2024/10/17 00:00:28 by jcologne         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,8 @@ int	ft_atoi(const char *nptr)
 	index = 0;
 	sign = 1;
 	num = 0;
+	if (nptr[index] == '\0')
+		return (0);
 	while (nptr[index] <= 32)
 		index++;
 	if (nptr[index] == '-')
@@ -28,7 +30,7 @@ int	ft_atoi(const char *nptr)
 		sign = -1;
 		index++;
 	}
-	if (nptr[index] == '+')
+	else if (nptr[index] == '+')
 		index++;
 	while (nptr[index] >= '0' && nptr[index] <= '9')
 	{

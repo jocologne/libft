@@ -6,7 +6,7 @@
 #    By: jcologne <jcologne@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/10/16 15:02:52 by jcologne          #+#    #+#              #
-#    Updated: 2024/10/16 17:13:06 by jcologne         ###   ########.fr        #
+#    Updated: 2024/10/17 01:45:43 by jcologne         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -32,8 +32,10 @@ SRC_FILES:= ft_isalpha.c \
 			ft_tolower.c \
 			ft_strchr.c \
 			ft_strrchr.c \
+			ft_strncmp.c \
 			ft_memchr.c \
-			ft_atoi.c
+			ft_atoi.c \
+			ft_strdup.c
 			
 OBJ_FILES := $(SRC_FILES:.c=.o)
 
