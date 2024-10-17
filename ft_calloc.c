@@ -1,41 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jcologne <jcologne@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/10 15:59:25 by wsl               #+#    #+#             */
-/*   Updated: 2024/10/17 05:30:32 by jcologne         ###   ########.fr       */
+/*   Created: 2024/10/17 02:19:03 by jcologne          #+#    #+#             */
+/*   Updated: 2024/10/17 02:40:47 by jcologne         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdlib.h>
 #include "libft.h"
 
-int	ft_atoi(const char *nptr)
+void	*ft_calloc(size_t num, size_t size)
 {
-	int	sign;
-	int	num;
-	int	index;
+	void	*ptr;
 
-	index = 0;
-	sign = 1;
-	num = 0;
-	if (nptr[index] == '\0')
-		return (0);
-	while (nptr[index] <= 32)
-		index++;
-	if (nptr[index] == '-')
-	{
-		sign = -1;
-		index++;
-	}
-	else if (nptr[index] == '+')
-		index++;
-	while (nptr[index] >= '0' && nptr[index] <= '9')
-	{
-		num = (num * 10) + (nptr[index]) - 48;
-		index++;
-	}
-	return (num * sign);
+	ptr = (void *)malloc(num * size);
+	if (ptr == 0)
+		return (NULL);
+	ft_bzero(ptr, num * size);
+	return (ptr);
 }

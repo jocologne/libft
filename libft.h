@@ -6,7 +6,7 @@
 /*   By: jcologne <jcologne@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/14 13:44:32 by root              #+#    #+#             */
-/*   Updated: 2024/10/17 01:44:44 by jcologne         ###   ########.fr       */
+/*   Updated: 2024/10/17 05:17:57 by jcologne         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,5 +36,8 @@ int		ft_memcmp(const void *s1, const void *s2, size_t n);
 char	*ft_strnstr(const char *s1, const char *s2, size_t len);
 int		ft_atoi(const char *nptr);
 char	*ft_strdup(const char *s);
+void	*ft_calloc(size_t num, size_t size);
+//PARTE_2
+char	*ft_itoa(int n);
 
 #endif

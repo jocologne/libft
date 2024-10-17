@@ -6,7 +6,7 @@
 /*   By: jcologne <jcologne@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/16 13:13:40 by jcologne          #+#    #+#             */
-/*   Updated: 2024/10/16 13:21:20 by jcologne         ###   ########.fr       */
+/*   Updated: 2024/10/17 03:20:09 by jcologne         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ void	*ft_memchr(const void *s, int c, size_t n)
 	while (i < n)
 	{
 		if (str[i] == uc)
-			return ((void *) &str[i]);
+			return ((void *) str + i);
 		i++;
 	}
 	return (NULL);
