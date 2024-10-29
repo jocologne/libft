@@ -6,19 +6,21 @@
 /*   By: jcologne <jcologne@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/17 02:19:03 by jcologne          #+#    #+#             */
-/*   Updated: 2024/10/18 16:59:04 by jcologne         ###   ########.fr       */
+/*   Updated: 2024/10/29 02:42:39 by jcologne         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_calloc(size_t num, size_t size)
+void	*ft_calloc(size_t nmemb, size_t size)
 {
 	void	*ptr;
 
-	ptr = (void *)malloc(num * size);
+	if (nmemb > (size_t)-1 / size)
+		return (NULL);
+	ptr = (void *)malloc(nmemb * size);
 	if (ptr == 0)
 		return (NULL);
-	ft_bzero(ptr, num * size);
+	ft_bzero(ptr, nmemb * size);
 	return (ptr);
 }
