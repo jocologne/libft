@@ -6,37 +6,29 @@
 /*   By: jcologne <jcologne@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/22 18:07:38 by jcologne          #+#    #+#             */
-/*   Updated: 2024/10/29 01:22:23 by jcologne         ###   ########.fr       */
+/*   Updated: 2024/10/29 01:57:54 by jcologne         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static size_t	countwords(char const *s, char delimeter)
+static int	malloc_free(char **token_v, int position, size_t buffer)
 {
-	size_t	num;
-	int		word;
+	int		i;
 
-	num = 0;
-	while (*s)
+	i = 0;
+	token_v[position] = malloc(buffer);
+	if (NULL == token_v[position])
 	{
-		word = 0;
-		while (*s == delimeter && *s)
-			++s;
-		while (*s != delimeter && *s)
-		{
-			if (!word)
-			{
-				++num;
-				word = 1;
-			}
-			++s;
-		}
+		while (i < position)
+			free(token_v[i++]);
+		free(token_v);
+		return (1);
 	}
-	return (num);
+	return (0);
 }
 
-static void	fillwords(char **string, char const *s, char delimeter)
+static int	fill_words(char **token_v, char const *s, char delimeter)
 {
 	size_t	len;
 	int		i;
@@ -54,23 +46,53 @@ static void	fillwords(char **string, char const *s, char delimeter)
 		}
 		if (len)
 		{
-			string[i] = malloc(len + 1);
-			ft_strlcpy(string[i], s - len, len + 1);
+			if (malloc_free(token_v, i, len + 1))
+				return (1);
+			ft_strlcpy(token_v[i], s - len, len + 1);
 		}
 		++i;
 	}
+	return (0);
+}
+
+static size_t	count_words(char const *s, char delimeter)
+{
+	size_t	tokens;
+	int		inside_token;
+
+	tokens = 0;
+	while (*s)
+	{
+		inside_token = 0;
+		while (*s == delimeter && *s)
+			++s;
+		while (*s != delimeter && *s)
+		{
+			if (!inside_token)
+			{
+				++tokens;
+				inside_token = 42;
+			}
+			++s;
+		}
+	}
+	return (tokens);
 }
 
 char	**ft_split(char const *s, char c)
 {
-	char	**result;
+	size_t	tokens;
+	char	**token_v;
 
-	if (!s)
+	if (NULL == s)
 		return (NULL);
-	result = malloc((countwords(s, c) + 1) * sizeof(char *));
-	if (!result)
+	tokens = 0;
+	tokens = count_words(s, c);
+	token_v = malloc((tokens + 1) * sizeof(char *));
+	if (NULL == token_v)
 		return (NULL);
-	result[countwords(s, c)] = '\0';
-	fillwords(result, s, c);
-	return (result);
+	token_v[tokens] = NULL;
+	if (fill_words(token_v, s, c))
+		return (NULL);
+	return (token_v);
 }
