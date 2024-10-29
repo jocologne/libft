@@ -6,7 +6,7 @@
 /*   By: jcologne <jcologne@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/14 13:44:32 by root              #+#    #+#             */
-/*   Updated: 2024/10/22 18:31:34 by jcologne         ###   ########.fr       */
+/*   Updated: 2024/10/29 02:03:11 by jcologne         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ char	*ft_strnstr(const char *s1, const char *s2, size_t len);
 int		ft_atoi(const char *nptr);
 char	*ft_strdup(const char *s);
 void	*ft_calloc(size_t num, size_t size);
-//PARTE_2
+//2
 char	*ft_itoa(int n);
 void	ft_putchar_fd(char c, int fd);
 void	ft_putstr_fd(char *s, int fd);
