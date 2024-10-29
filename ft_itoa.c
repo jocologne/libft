@@ -6,13 +6,13 @@
 /*   By: jcologne <jcologne@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/17 05:19:54 by jcologne          #+#    #+#             */
-/*   Updated: 2024/10/18 16:55:17 by jcologne         ###   ########.fr       */
+/*   Updated: 2024/10/29 02:06:11 by jcologne         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_numlen(int n)
+static int	ft_numlen(int n)
 {
 	long	num;
 	int		len;
