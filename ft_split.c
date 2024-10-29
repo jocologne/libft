@@ -6,7 +6,7 @@
 /*   By: jcologne <jcologne@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/22 18:07:38 by jcologne          #+#    #+#             */
-/*   Updated: 2024/10/29 01:57:54 by jcologne         ###   ########.fr       */
+/*   Updated: 2024/10/29 02:05:17 by jcologne         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,10 +57,10 @@ static int	fill_words(char **token_v, char const *s, char delimeter)
 
 static size_t	count_words(char const *s, char delimeter)
 {
-	size_t	tokens;
+	size_t	n;
 	int		inside_token;
 
-	tokens = 0;
+	n = 0;
 	while (*s)
 	{
 		inside_token = 0;
@@ -70,29 +70,29 @@ static size_t	count_words(char const *s, char delimeter)
 		{
 			if (!inside_token)
 			{
-				++tokens;
+				++n;
 				inside_token = 42;
 			}
 			++s;
 		}
 	}
-	return (tokens);
+	return (n);
 }
 
 char	**ft_split(char const *s, char c)
 {
-	size_t	tokens;
-	char	**token_v;
+	size_t	words;
+	char	**result;
 
 	if (NULL == s)
 		return (NULL);
-	tokens = 0;
-	tokens = count_words(s, c);
-	token_v = malloc((tokens + 1) * sizeof(char *));
-	if (NULL == token_v)
+	words = 0;
+	words = count_words(s, c);
+	result = malloc((words + 1) * sizeof(char *));
+	if (NULL == result)
 		return (NULL);
-	token_v[tokens] = NULL;
-	if (fill_words(token_v, s, c))
+	result[words] = NULL;
+	if (fill_words(result, s, c))
 		return (NULL);
-	return (token_v);
+	return (result);
 }
