@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: jcologne <jcologne@student.42.fr>          +#+  +:+       +#+         #
+#    By: jcologne <jcologne@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/10/16 15:02:52 by jcologne          #+#    #+#              #
-#    Updated: 2024/10/17 05:46:06 by jcologne         ###   ########.fr        #
+#    Updated: 2024/10/22 18:04:44 by jcologne         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -34,10 +34,22 @@ SRC_FILES:= ft_isalpha.c \
 			ft_strrchr.c \
 			ft_strncmp.c \
 			ft_memchr.c \
+			ft_memcmp.c \
+			ft_strnstr.c \
 			ft_atoi.c \
 			ft_strdup.c \
 			ft_calloc.c \
-			ft_itoa.c
+			ft_itoa.c \
+			ft_putchar_fd.c \
+			ft_putstr_fd.c \
+			ft_putendl_fd.c \
+			ft_putnbr_fd.c \
+			ft_strjoin.c \
+			ft_substr.c	\
+			ft_strmapi.c \
+			ft_striteri.c \
+			ft_strtrim.c \
+			ft_split.c
 			
 OBJ_FILES := $(SRC_FILES:.c=.o)
 

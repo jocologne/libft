@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jcologne <jcologne@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jcologne <jcologne@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/15 20:11:31 by jcologne          #+#    #+#             */
-/*   Updated: 2024/10/15 20:46:14 by jcologne         ###   ########.fr       */
+/*   Updated: 2024/10/18 15:45:35 by jcologne         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ char	*ft_strchr(const char *s, int c)
 			return ((char *)tmp);
 		tmp++;
 	}
-	if (!c)
+	if ((char)c == '\0')
 		return ((char *)tmp);
 	return (NULL);
 }

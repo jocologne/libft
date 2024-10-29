@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jcologne <jcologne@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jcologne <jcologne@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/16 20:10:46 by jcologne          #+#    #+#             */
-/*   Updated: 2024/10/17 01:41:34 by jcologne         ###   ########.fr       */
+/*   Updated: 2024/10/18 15:25:21 by jcologne         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,21 +15,22 @@
 char	*ft_strnstr(const char *s1, const char *s2, size_t len)
 {
 	size_t	i;
-	char	*ts1;
-	char	*ts2;
+	size_t	j;
 
-	ts1 = (char *)s1;
-	ts2 = (char *)s2;
 	i = 0;
-	if (*ts2 == '\0')
-		return (ts1);
-	while (i < len)
+	j = 0;
+	if (*s2 == 0)
+		return ((char *)s1);
+	while (s1[i] && i < len)
 	{
-		if (!ft_strncmp(ts1 + i, ts2, ft_strlen(ts2)))
+		while (s1[i + j] == s2[j] && s1[i + j] && i + j < len)
 		{
-			return (ts1 + i);
+			j++;
+			if (s2[j] == '\0')
+				return ((char *) s1 + i);
 		}
 		i++;
+		j = 0;
 	}
-	return (NULL);
+	return (0);
 }
