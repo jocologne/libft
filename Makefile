@@ -54,18 +54,18 @@ SRC_FILES:= ft_isalpha.c \
 OBJ_FILES := $(SRC_FILES:.c=.o)
 
 %.o: %.c $(HDR)
-	$(CC) $(CFLAGS) -c $< -o $@
+	@$(CC) $(CFLAGS) -c $< -o $@
 
 $(NAME): $(OBJ_FILES)
-	ar rcs $@ $^
+	@ar rcs $@ $^
 
 all: $(NAME)
 
 clean:
-	rm -f $(OBJ_FILES)
+	@rm -f $(OBJ_FILES)
 
 fclean: clean
-	rm -f $(NAME)
+	@rm -f $(NAME)
 
 re: fclean all
 
